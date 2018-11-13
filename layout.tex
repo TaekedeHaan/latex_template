@@ -1,0 +1,180 @@
+\documentclass[10pt, letterpaper, twoside]{scrartcl}
+\renewcommand{\baselinestretch}{0.95}
+
+% general
+\usepackage[a4paper, total={6in, 9in}]{geometry}	%Set page size
+\usepackage{lscape} % landscape
+
+% functionality
+\usepackage{amsmath}				%for equations
+\usepackage{microtype}     			%To prevent ff and others to be turned in in a wierd symbol
+\usepackage{comment} 				%for comments
+\usepackage{subcaption}				%Subfigures
+\usepackage{wrapfig}				%for images in text
+\usepackage{graphicx} 				%for immages 
+\usepackage{hyperref}               %linkjes
+\usepackage{blindtext}
+
+% geen idee
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\usepackage{wasysym}
+\usepackage{amssymb}
+
+% layout
+\usepackage{titlesec}           %set title spacing
+\usepackage{multicol}           %multi columns
+\usepackage{fancyhdr}           % mooie headers
+\usepackage{titling}            % echt geen flauw idee
+\usepackage{matlab-prettifier}  % MATLAB code
+\usepackage{pdfcolparallel}		%Parallel lists
+\usepackage{mdwlist}			%Allows smaller lists using *
+\usepackage{enumitem}				%compacte lijsten
+\usepackage[font=small,labelfont=bf]{caption} % caption
+
+% colors
+\usepackage{xcolor}	            %light colors
+\usepackage{color} 					%red, green, blue, yellow, cyan, magenta, black, white
+
+% characters
+\usepackage{dsfont}             %Speciale wiskune characters
+\usepackage{upgreek}            %Voor uppsi
+
+% define colors
+\definecolor{mygreen}{RGB}{28,172,0} 	% color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+%\definecolor{TUblue}{rgb}{0, 0.6032, 1}
+\definecolor{TUblue}{rgb}{0, 0.4470, 0.7410}
+%\definecolor{TUblue}{rgb}{0,0.776,1}
+\definecolor{boxColour}{rgb}{0,0.776,1}
+\definecolor{black}{rgb}{0,0,0}
+
+% test formatting
+\frenchspacing 						%Removes the extra spacing after each sentence.
+\DisableLigatures{encoding = *, family = *} %To prevent ff and others to be turned in in a symbol
+
+% list
+\setitemize{noitemsep,topsep=3pt,parsep=0pt,partopsep=0pt, leftmargin=*}
+\setenumerate{noitemsep,topsep=0pt,parsep=2pt,partopsep=0pt, leftmargin=*}
+\renewcommand{\labelitemii}{$\circ$}	%circel in 2nd item
+\renewcommand{\labelitemiii}{$\triangleright$}
+
+% create coloured textbf
+\let\oldtextbf\textbf    % keep \textbf{} in \oldtextbf{}
+\renewcommand{\textbf}[1]{\textcolor{TUblue}{\oldtextbf{#1}}}
+
+%Signel column figures
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\graphicspath{ {fig/} } % figure path always in fig/
+
+% caption
+\setcapindent{0pt}
+
+
+\titlespacing*{\section}{0pt}{3ex plus 0.5ex minus .2ex}{0.1ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{2ex plus 0.5ex minus .2ex}{0.1ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{2ex plus 0.5ex minus .2ex}{0.1ex plus .2ex}
+
+\setlength{\columnsep}{1cm}
+
+% front page image
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vspace{17cm}
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{0title.JPG}%
+\vfill
+}}}
+
+%%set title
+\title{HW set, Due May 31, 2018}
+\author{Taeke de Haan (4316568)}
+\date{\today}
+
+%% Fancy headers
+%\fancypagestyle{plain} 
+\setlength{\headheight}{28pt}
+\pagestyle{fancy}
+\fancyhf{}
+  
+% Set line width 
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+% Set line colors
+\renewcommand{\headrule}{\hbox to\headwidth{\color{TUblue}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{TUblue}\leaders\hrule height \headrulewidth\hfill}} 
+
+\fancyhead[L]{\theauthor}
+\fancyhead[C]{HW set, Due Due March 27, 2018}
+\fancyhead[R]{ME41055}
+\fancyfoot[L]{\today}
+\fancyfoot[R]{\includegraphics[width=2cm]{TUDLogo.png}}
+\fancyfoot[C]{Page \thepage}
+
+% section formatting
+\makeatletter
+\let\@seccntformatorig\@seccntformat
+\def\@seccntformat#1{%
+  \ifnum0=\pdfstrcmp{#1}{section}%
+  {} %Well, could say Item \thesection:{} here as well... 
+  \else
+  \@seccntformatorig{#1}%
+  \fi
+}
+\makeatother
+
+\setkomafont{section}{\mysection}
+\newcommand{\mysection}[1]{%
+    \LARGE
+    \color{white}
+    \setlength{\fboxsep}{0cm}%already boxed
+    \colorbox{TUblue}{%
+        \begin{minipage}{\linewidth}%
+            \vspace*{3pt}%Space before
+            %\hspace{3pt}
+            #1
+            \vspace*{0pt}%Space after
+        \end{minipage}%
+    }
+}
+    
+\setkomafont{subsection}{\mysubsection}
+\newcommand{\mysubsection}[1]{%
+    \Large
+    \color{white}
+    \setlength{\fboxsep}{0cm}%already boxed
+    \colorbox{black!30}{%
+        \begin{minipage}{\linewidth}%
+            \vspace*{3pt}%Space before
+            %\hspace{2pt}
+            #1
+            \vspace*{0pt}%Space after
+        \end{minipage}%
+    }
+}
+    
+\setkomafont{subsubsection}{\mysubsubsection}
+\newcommand{\mysubsubsection}[1]{%
+    \large
+    \color{black}
+    \setlength{\fboxsep}{0cm}%already boxed
+    \colorbox{black!5}{%
+        \begin{minipage}{\linewidth}%
+            \vspace*{2pt}%Space before
+            %\hspace{3pt}
+            #1
+            \vspace*{2pt}%Space after
+        \end{minipage}%
+    }
+}
+    
+\setcounter{secnumdepth}{2} % only chapter and sections will be numbered
+\setcounter{tocdepth}{3}    % entries down to \subsubsections in the TOC
+
