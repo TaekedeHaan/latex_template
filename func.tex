@@ -1,0 +1,75 @@
+\tikzstyle{block} = [draw, fill=black!20, text=black, rectangle, minimum height=3em, minimum width=6em]
+\tikzstyle{sum} = [draw, fill=TUblue!20, circle, node distance=1cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+\tikzstyle{virtual} = [coordinate]
+
+
+\newcommand{\bquestion[1]}{\begin{enumerate}[label = \textbf{Q#1.\arabic*}, leftmargin=0.1\parindent]}
+\newcommand{\equestion}{\end{enumerate}}
+
+\newcommand{\btask[1]}{\begin{enumerate}[label = \textbf{T#1.\arabic*}, leftmargin=0.1\parindent]}
+\newcommand{\etask}{\end{enumerate}}
+\renewcommand{\labelenumii}{\textbf{\alph*}\oldtextbf{)}}
+
+
+% Quotes
+\def\bsq#1{%both single quotes
+\lq{#1}\rq}
+
+%% math
+\newcommand\m[1]{\begin{bmatrix}#1\end{bmatrix}} 
+%\newcommand{\ds}{\displaystyle}
+%\newcommand{\qq}{\quad\quad}
+%\newcommand{\Var} {\mathrm{Var}\,}
+%\newcommand{\Cov} {\mathrm{Cov}\,}
+
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{definition}{Definition}
+%\newtheorem{proposition}{Proposition}
+%\newtheorem{lemma}{Lemma}
+%\newtheorem{corollary}{Corollary}
+%\newtheorem{example}{Example}
+%\newtheorem{remark}{Remark}
+\newtheorem{assumption}{Assumption}
+%\newtheorem{standing}{Standing Assumption}
+%\newtheorem{design}{Design choice}
+
+
+\usepackage{soul}
+\usepackage[ruled]{algorithm2e}
+
+% Commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\mc}{\mathcal}
+\newcommand{\A}{\mc{A}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bbS}{\mathbb{S}}
+
+\newcommand{\prox}{\mathrm{prox}}
+\newcommand{\fix}{\mathrm{fix}}
+\newcommand{\zer}{\mathrm{zer}}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\dist}{\mathrm{dist}}
+\newcommand{\argmin}{\mathrm{argmin}}
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\proj}{\mathrm{proj}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\gph}{\mathrm{gph}}
+
+
+\newcommand{\bs}{\boldsymbol}
+\def\bsu{\boldsymbol{u}}
+\def\bsx{\boldsymbol{x}}
+\def\ni{\noindent}
+\def\xx{\chi}
+\def\ub{\textbf{u}}
+\def\zb{\textbf{z}}
+
+\newcommand{\norm}[1]{\left\|#1\right\|}

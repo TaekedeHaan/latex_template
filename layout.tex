@@ -1,4 +1,4 @@
-\documentclass[10pt, letterpaper, twoside]{scrartcl}
+\documentclass[10pt, letterpaper]{scrartcl}
 \renewcommand{\baselinestretch}{0.95}
 
 % general
@@ -32,6 +32,10 @@
 \usepackage{enumitem}				%compacte lijsten
 \usepackage[font=small,labelfont=bf]{caption} % caption
 
+% Diagrams
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
 % colors
 \usepackage{xcolor}	            %light colors
 \usepackage{color} 					%red, green, blue, yellow, cyan, magenta, black, white
@@ -39,6 +43,10 @@
 % characters
 \usepackage{dsfont}             %Speciale wiskune characters
 \usepackage{upgreek}            %Voor uppsi
+
+% lists
+% \renewcommand{\labelenumi}{\textbf{Task 2.\arabic*.}}
+\renewcommand{\labelenumii}{\textbf{\alph*}\oldtextbf{)}}
 
 % define colors
 \definecolor{mygreen}{RGB}{28,172,0} 	% color values Red, Green, Blue
@@ -48,6 +56,12 @@
 %\definecolor{TUblue}{rgb}{0,0.776,1}
 \definecolor{boxColour}{rgb}{0,0.776,1}
 \definecolor{black}{rgb}{0,0,0}
+
+% ToDo
+\usepackage {todonotes}
+
+% code
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
 
 % test formatting
 \frenchspacing 						%Removes the extra spacing after each sentence.
@@ -73,6 +87,7 @@
 % caption
 \setcapindent{0pt}
 
+\usepackage{float}
 
 \titlespacing*{\section}{0pt}{3ex plus 0.5ex minus .2ex}{0.1ex plus .2ex}
 \titlespacing*{\subsection}{0pt}{2ex plus 0.5ex minus .2ex}{0.1ex plus .2ex}
@@ -93,7 +108,7 @@ keepaspectratio]{0title.JPG}%
 }}}
 
 %%set title
-\title{HW set, Due May 31, 2018}
+\title{Final Assignment }
 \author{Taeke de Haan (4316568)}
 \date{\today}
 
@@ -112,11 +127,13 @@ keepaspectratio]{0title.JPG}%
 \renewcommand{\footrule}{\hbox to\headwidth{\color{TUblue}\leaders\hrule height \headrulewidth\hfill}} 
 
 \fancyhead[L]{\theauthor}
-\fancyhead[C]{HW set, Due Due March 27, 2018}
-\fancyhead[R]{ME41055}
+\fancyhead[C]{}
+\fancyhead[R]{WI4771TU}
 \fancyfoot[L]{\today}
 \fancyfoot[R]{\includegraphics[width=2cm]{TUDLogo.png}}
 \fancyfoot[C]{Page \thepage}
+
+\setcounter{MaxMatrixCols}{20}
 
 % section formatting
 \makeatletter
@@ -132,7 +149,7 @@ keepaspectratio]{0title.JPG}%
 
 \setkomafont{section}{\mysection}
 \newcommand{\mysection}[1]{%
-    \LARGE
+    \large
     \color{white}
     \setlength{\fboxsep}{0cm}%already boxed
     \colorbox{TUblue}{%
@@ -147,7 +164,7 @@ keepaspectratio]{0title.JPG}%
     
 \setkomafont{subsection}{\mysubsection}
 \newcommand{\mysubsection}[1]{%
-    \Large
+    \large
     \color{white}
     \setlength{\fboxsep}{0cm}%already boxed
     \colorbox{black!30}{%
